@@ -213,5 +213,21 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    'debug_blacklist' => [
+        '_ENV' => array_keys($_ENV),
+        '_SERVER' => array_merge([
+            'DOCUMENT_ROOT',
+            'CONTEXT_DOCUMENT_ROOT',
+            'SERVER_ADMIN',
+            'SCRIPT_FILENAME',
+            'GATEWAY_INTERFACE',
+            'SERVER_PROTOCOL',
+            'SCRIPT_NAME',
+            'PHP_SELF',
+        ], array_keys($_ENV)),
+        '_POST' => array_merge([
+            'password',
+        ], array_keys($_ENV))
+    ]
 
 ];
