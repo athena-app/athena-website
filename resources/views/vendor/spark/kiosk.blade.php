@@ -5,11 +5,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 @endsection
 
+@section('navigation')
+    @include('spark::kiosk.nav-items')
+@endsection
+
 @section('content')
 <spark-kiosk :user="user" inline-template>
     <div class="spark-screen container">
         <div class="row">
             <!-- Tabs -->
+            <!--
             <div class="col-md-3 spark-settings-tabs">
                 <aside>
                     <h3 class="nav-heading ">
@@ -50,9 +55,9 @@
                     </ul>
                 </aside>
             </div>
-
+            -->
             <!-- Tab cards -->
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="tab-content">
                     <!-- Announcements -->
                     <div role="tabcard" class="tab-pane active" id="announcements">
