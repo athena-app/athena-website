@@ -35,9 +35,23 @@
         @endif
 
         <!-- Main Content -->
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container">
+            <div class="row mt-4">
+                @if(Auth::check())
+                    <div class="col-md-3 pr-0">
+                        @include('spark::sidebar')
+                    </div>
+                    <!-- Main Content -->
+                    <main class="col-md-9">
+                        @yield('content')
+                    </main>
+                @else
+                    <main class="col-md-12">
+                        @yield('content')
+                    </main>
+                @endif
+            </div>
+        </div>
 
         <!-- Application Level Modals -->
         @if (Auth::check())

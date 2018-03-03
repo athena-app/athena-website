@@ -11654,3 +11654,22 @@ pre {
   border-radius: 50%;
 }
 
+.nav-item {
+  padding-bottom: 10px;
+}
+
+.fa-nav {
+  color: #95a2ae;
+  margin-left: 15px;
+}
+
+.card-default .card-footer {
+  background-color: #fff;
+  border-top: none;
+  padding: 1rem 1.25rem;
+}
+
+.card-footer:last-child {
+  border-radius: 5px;
+}
+

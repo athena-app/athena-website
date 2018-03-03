@@ -1,2 +1,21 @@
 // @import "./spark/spark";
 @import "./../../../vendor/laravel/spark-aurelius/resources/assets/sass/spark";
+
+.nav-item {
+    padding-bottom: 10px;
+}
+
+.fa-nav {
+    color: #95a2ae;
+    margin-right: 15px;
+}
+
+.card-default .card-footer {
+    background-color: #fff;
+    border-top: none;
+    padding: 1rem 1.25rem;
+}
+
+.card-footer:last-child {
+    border-radius: 5px;
+}
