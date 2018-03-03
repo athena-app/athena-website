@@ -15,5 +15,9 @@ class Subject extends Model
 {
     use SoftDeletes;
 
+    public function topics() {
+        return $this->hasMany(Topic::class);
+    }
+
     //TODO
 }

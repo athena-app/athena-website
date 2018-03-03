@@ -15,5 +15,16 @@ class Topic extends Model
 {
     use SoftDeletes;
 
+    /**
+     * Return the Subject that the Topic instance is assigned to.
+     */
+    public function subject() {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function lessons() {
+        return $this->hasMany(Lesson::class);
+    }
+
     //TODO
 }
