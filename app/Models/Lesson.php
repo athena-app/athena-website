@@ -1,9 +1,9 @@
 <?php
 /**
  * Lesson Model
- *
- * @subpackage  Models
  */
+
+namespace App;
 
 use Auth;
 use DB;
