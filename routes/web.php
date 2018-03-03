@@ -14,3 +14,11 @@
 Route::get('/', 'WelcomeController@show');
 
 Route::get('/home', 'HomeController@show');
+
+$dir = __DIR__ . DIRECTORY_SEPARATOR . basename(__FILE__, '.php') . DIRECTORY_SEPARATOR;
+$contents = scandir($dir);
+foreach($contents as $content) {
+    if(!in_array($content, array('.', '..')) && !is_dir($dir . $content)) {
+        include $dir . $content;
+    }
+}
