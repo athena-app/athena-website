@@ -1,7 +1,7 @@
 @extends('spark::layouts.app')
 
 @section('navigation')
-    @include('notes.nav-items')
+    @include('notes.nav-items-show')
 @endsection
 
 @section('content')
