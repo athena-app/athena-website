@@ -11,7 +11,7 @@
         <div class="container" v-if="user">
             <!-- Branding Image -->
             <a href="/home">
-                <img src="img/athena-logo.png" width="75px" height="75px" alt="Athena">
+                <img src="/img/athena-logo.png" width="75px" height="75px" alt="Athena">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

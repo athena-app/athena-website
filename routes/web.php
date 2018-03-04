@@ -34,3 +34,19 @@ Route::get('subtopics/{subtopic}', 'SubtopicController@show')
 // ex. /lessons/1
 Route::get('lessons/{lesson}', 'LessonController@show')
     ->name('lessons.show');
+
+// ex. /notes --- list notes
+Route::get('notes', 'NoteController@overview')
+    ->name('notes.overview');
+
+// ex. /notes/1/ --- list note object
+Route::get('notes/{note}', 'NoteController@show')
+    ->name('notes.show');
+
+// ex. /notes/create --- create note object
+Route::post('notes/create', 'NoteController@create')
+    ->name('notes.create');
+
+// ex. /notes/1/ --- list note object
+Route::post('notes/edit', 'NoteController@edit')
+    ->name('notes.edit');
