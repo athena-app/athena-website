@@ -22,4 +22,3 @@
 @endsection
 
 @include('notes.create')
-@include('notes.edit')
