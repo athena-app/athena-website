@@ -13,7 +13,7 @@
 
     <style>
         body, html {
-            background: url('/img/spark-bg.png');
+            background: ;
             background-repeat: repeat;
             background-size: 300px 200px;
             height: 100%;
@@ -86,7 +86,7 @@
 
         <div class="flex-fill flex-center">
             <h1 class="text-center">
-                <img src="/img/color-logo.png">
+                <img src="/img/athena-logo.png">
             </h1>
         </div>
     </div>
