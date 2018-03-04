@@ -15,6 +15,11 @@
         <div class="pull-left">
             {{ $subtopic->name }}
         </div>
+        <div class="pull-right">
+            <a href="/subtopics/{{ $subtopic->id }}/favorite">
+                <i class="{{ $subtopic->favoritedBy()->contains(Auth::user()) ? 'fas' : 'far' }} fa-fw fa-star"></i> {{ $subtopic->favoritedBy()->contains(Auth::user()) ? "Unfavorite" : "Favorite" }}
+            </a>
+        </div>
     </div>
     <div class="card-body">
         <ul class="list-group">

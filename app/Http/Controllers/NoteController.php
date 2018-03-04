@@ -124,4 +124,9 @@ class NoteController extends Controller
             return Redirect::to('notes/' . $note->id);
         }
     }
+
+    public function favorite(Note $note) {
+        $note->toggleFavorite();
+        return Redirect::back();
+    }
 }

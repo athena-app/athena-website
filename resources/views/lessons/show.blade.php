@@ -15,6 +15,11 @@
         <div class="pull-left">
             {{ $lesson->name }}
         </div>
+        <div class="pull-right">
+            <a href="/lessons/{{ $lesson->id }}/favorite">
+                <i class="{{ $lesson->favoritedBy()->contains(Auth::user()) ? 'fas' : 'far' }} fa-fw fa-star"></i> {{ $lesson->favoritedBy()->contains(Auth::user()) ? 'Unfavorite' : 'Favorite' }}
+            </a>
+        </div>
     </div>
     <div class="card-body py-0 px-3">
         <div class="row pb-2">

@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
 use App\Topic;
 
 class TopicController extends Controller
@@ -32,5 +33,10 @@ class TopicController extends Controller
     {
         return view('topics.show')
             ->with('topic', $topic);
+    }
+
+    public function favorite(Topic $topic) {
+        $topic->toggleFavorite();
+        return Redirect::back();
     }
 }

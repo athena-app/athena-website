@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
 use App\Subtopic;
 
 class SubtopicController extends Controller
@@ -32,5 +33,10 @@ class SubtopicController extends Controller
     {
         return view('subtopics.show')
             ->with('subtopic', $subtopic);
+    }
+
+    public function favorite(Subtopic $subtopic) {
+        $subtopic->toggleFavorite();
+        return Redirect::back();
     }
 }

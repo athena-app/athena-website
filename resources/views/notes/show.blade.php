@@ -10,6 +10,11 @@
         <div class="pull-left">
             {{ $note->name }}
         </div>
+        <div class="pull-right">
+            <a href="/notes/{{ $note->id }}/favorite">
+                <i class="{{ $note->favoritedBy()->contains(Auth::user()) ? 'fas' : 'far' }} fa-fw fa-star"></i> {{ $note->favoritedBy()->contains(Auth::user()) ? "Unfavorite" : "Favorite" }}
+            </a>
+        </div>
     </div>
     <div class="card-body">
         {{ $note->text }}

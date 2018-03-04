@@ -7,10 +7,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use ChristianKuri\LaravelFavorite\Traits\Favoriteable;
 
 class Subtopic extends Model
 {
-    use SoftDeletes;
+    use Favoriteable, SoftDeletes;
 
     /**
      * Return the Topic that the Subtopic instance is assigned to.

@@ -54,3 +54,21 @@ Route::post('notes/edit', 'NoteController@edit')
 // ex. /notes/1/ --- list note object
 Route::get('chat', 'ChatController@show')
     ->name('chat.show');
+
+Route::get('subjects/{subject}/favorite', 'SubjectController@favorite')
+    ->name('subjects.favorite');
+
+Route::get('topics/{topic}/favorite', 'TopicController@favorite')
+    ->name('topics.favorite');
+
+Route::get('subtopics/{subtopic}/favorite', 'SubtopicController@favorite')
+    ->name('subtopics.favorite');
+
+Route::get('lessons/{lesson}/favorite', 'LessonController@favorite')
+    ->name('lessons.favorite');
+
+Route::get('notes/{note}/favorite', 'NoteController@favorite')
+    ->name('notes.favorite');
+
+Route::get('favorites', 'FavoriteController@overview')
+    ->name('favorites.overview');

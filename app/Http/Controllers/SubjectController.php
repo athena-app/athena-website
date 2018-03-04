@@ -52,4 +52,9 @@ class SubjectController extends Controller
         return view('subjects.show')
             ->with('subject', $subject);
     }
+
+    public function favorite(Subject $subject) {
+        $subject->toggleFavorite();
+        return Redirect::back();
+    }
 }

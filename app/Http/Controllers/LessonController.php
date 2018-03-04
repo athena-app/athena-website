@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
 use App\Lesson;
 use App\Subtopic;
 
@@ -57,4 +58,10 @@ class LessonController extends Controller
             ->with('lesson', $lesson)
             ->with('models', $models);
     }
+
+    public function favorite(Lesson $lesson) {
+        $lesson->toggleFavorite();
+        return Redirect::back();
+    }
 }
+

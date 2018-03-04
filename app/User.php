@@ -4,10 +4,11 @@ namespace App;
 
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
+use ChristianKuri\LaravelFavorite\Traits\Favoriteability;
 
 class User extends SparkUser
 {
-    use CanJoinTeams;
+    use CanJoinTeams, Favoriteability;
 
     /**
      * The attributes that are mass assignable.

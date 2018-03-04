@@ -26,7 +26,7 @@
         )); ?>;
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/90/three.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
     <div id="spark-app" v-cloak>
