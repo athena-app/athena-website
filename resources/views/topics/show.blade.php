@@ -1,5 +1,14 @@
 @extends('spark::layouts.app')
 
+@section('navigation')
+<li class="nav-item">
+    <a class="nav-link" href="/subjects/{{ $topic->subject->id }}">
+        <i class="fa fa-nav fa-fw fa-btn fa-arrow-left"></i>
+        {{ $topic->subject->name }}
+    </a>
+</li>
+@endsection
+
 @section('content')
 <div class="card card-default">
     <div class="card-header clearfix">

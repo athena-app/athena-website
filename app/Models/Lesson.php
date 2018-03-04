@@ -18,8 +18,8 @@ class Lesson extends Model
     /**
      * Return the Subject that the Topic instance is assigned to.
      */
-    public function topic() {
-        return $this->belongsTo(Topic::class);
+    public function subtopic() {
+        return $this->belongsTo(Subtopic::class);
     }
 
     //TODO

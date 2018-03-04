@@ -13,10 +13,19 @@
                 </a>
             </li>
         @endif
-        @include('constant-nav-items')
         @hasSection('navigation')
             @yield('navigation')
         @endif
+    </ul>
+</aside>
+<aside class="mb-2">
+    <div class="spark-settings-tabs">
+        <h3 class="nav-heading">
+            {{__('Explore')}}
+        </h3>
+    </div>
+    <ul class="nav flex-column">
+        @include('constant-nav-items')
     </ul>
 </aside>
 

@@ -1,5 +1,14 @@
 @extends('spark::layouts.app')
 
+@section('navigation')
+<li class="nav-item">
+    <a class="nav-link" href="/subtopics/{{ $lesson->subtopic->id }}">
+        <i class="fa fa-nav fa-fw fa-btn fa-arrow-left"></i>
+        {{ $lesson->subtopic->name }}
+    </a>
+</li>
+@endsection
+
 @section('content')
 <div class="card card-default">
     <div class="card-header clearfix">
@@ -7,7 +16,7 @@
             {{ $lesson->name }}
         </div>
     </div>
-    <div class="card-body">
+    <div class="card-body py-0 px-3">
         <div class="row pb-2">
             <div class="embed-responsive embed-responsive-16by9">
                 <video controls>
