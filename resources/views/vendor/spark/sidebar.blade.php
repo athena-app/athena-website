@@ -43,7 +43,7 @@
         @else
             @foreach(Auth::user()->teams as $team)
                 <li class="nav-item">
-                    <a class="nav-link" href="/locations/{{ $team->id }}">
+                    <a class="nav-link" href="/settings/teams/{{ $team->id }}/switch">
                         <i class="fa fa-nav fa-fw fa-btn fa-location-arrow"></i>
                         {{ $team->name }}
                     </a>

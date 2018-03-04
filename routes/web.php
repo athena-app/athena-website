@@ -50,3 +50,7 @@ Route::post('notes/create', 'NoteController@create')
 // ex. /notes/1/ --- list note object
 Route::post('notes/edit', 'NoteController@edit')
     ->name('notes.edit');
+
+// ex. /notes/1/ --- list note object
+Route::get('chat', 'ChatController@show')
+    ->name('chat.show');
