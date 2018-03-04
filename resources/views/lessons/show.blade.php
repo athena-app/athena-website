@@ -27,11 +27,11 @@
     </div>
 </div>
 
-@if (!empty($models))
+@if (!empty($models) && !empty($lesson->keywords))
     <div class="card card-default">
         <div class="card-header clearfix">
             <div class="pull-left">
-                3D Models related to "{{ $lesson->keywords }}" from Thingiverse
+                3D Models related to "{{ $lesson->keywords }}" from SketchFab
             </div>
         </div>
     </div>
@@ -40,10 +40,39 @@
         @foreach ($models as $model)
             <div class="col-md-3">
                 <div class="card">
-                    <img class="card-img-top" src="{{ str_replace('medium', 'large', $model->thumbnail) }}" alt="Card image cap">
+                    <a href="#" data-toggle="modal" data-target="#viewerModal{{ $model->uid }}">
+                        <img class="card-img-top" src="{{ $model->thumbnails->images[2]->url }}" alt="Card image cap">
+                    </a>
                     <div class="card-block p-3">
                         <h4 class="card-title">{{ $model->name }}</h4>
-                        <p class="card-text"><small class="text-muted">Uploaded by {{ $model->creator->name }}</small></p>
+                        <p class="card-text"><small class="text-muted">Uploaded by {{ $model->user->username }}</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="viewerModal{{ $model->uid }}" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">{{ $model->name }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="sketchfab-embed-wrapper embed-responsive embed-responsive-16by9">
+                                <iframe src="https://sketchfab.com/models/{{ $model->uid }}/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                    <a href="https://sketchfab.com/models/{{ $model->uid }}?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">{{ $model->name }}</a> by <a href="https://sketchfab.com/{{ $model->user->uid }}?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">{{ $model->user->username }}</a> on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                </p>
+                            </div>
+                            <div class="row p-3">
+                                {{ $model->description }}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -24,6 +24,8 @@
             Spark::scriptVariables(), []
         )); ?>;
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/90/three.min.js"></script>
 </head>
 <body>
     <div id="spark-app" v-cloak>
