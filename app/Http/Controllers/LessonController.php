@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lesson;
 use App\Subtopic;
 
 class LessonController extends Controller
