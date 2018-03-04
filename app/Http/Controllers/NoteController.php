@@ -38,7 +38,7 @@ class NoteController extends Controller
     public function overview()
     {
         return view('notes.overview')
-            ->with('notes', Note::all());
+            ->with('notes', Auth::user()->currentTeam->notes);
     }
 
     /**
@@ -79,6 +79,7 @@ class NoteController extends Controller
             $note = new Note;
 
             // Set the attributes
+            $note->team_id = Auth::user()->currentTeam->id;
             $note->name = ucwords(Input::get('name'));
             $note->text = Input::get('text');
 
@@ -113,6 +114,7 @@ class NoteController extends Controller
         // If the Validator passed
         else {
             // Set the attributes
+            $note->team_id = Auth::user()->currentTeam->id;
             $note->name = ucwords(Input::get('name'));
             $note->text = Input::get('text');
 

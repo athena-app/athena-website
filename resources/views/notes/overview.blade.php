@@ -14,11 +14,16 @@
     <div class="card-body">
         <ul class="list-group">
             @foreach ($notes as $note)
-                <a href="/notes/{{ $note->id }}" class="list-group-item list-group-item-action">{{ $note->name }}</a>
+                <a href="/notes/{{ $note->id }}" class="list-group-item list-group-item-action clearfix">
+                    <div class="pull-left">
+                        {{ $note->name }}
+                    </div>
+                    <div class="pull-right">
+                        <i class="fa fa-fw fa-caret-right"></i>
+                    </div>
+                </a>
             @endforeach
         </ul>
     </div>
 </div>
 @endsection
-
-@include('notes.create')

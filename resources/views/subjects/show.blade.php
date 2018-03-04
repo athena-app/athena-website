@@ -19,9 +19,16 @@
     <div class="card-body">
         <ul class="list-group">
             @foreach ($subject->topics as $topic)
-                <a href="/topics/{{ $topic->id }}" class="list-group-item list-group-item-action">{{ $topic->name }}</a>
+                <a href="/topics/{{ $topic->id }}" class="list-group-item list-group-item-action clearfix">
+                    <div class="pull-left">
+                        {{ $topic->name }}
+                    </div>
+                    <div class="pull-right">
+                        <i class="fa fa-fw fa-caret-right"></i>
+                    </div>
+                </a>
             @endforeach
         </ul>
     </div>
 </div>
-@stop
+@endsection

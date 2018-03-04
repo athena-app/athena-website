@@ -16,6 +16,8 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('team_id')->unsigned()->index()->nullable()->comment("The ID of the Topic's Location");
+            $table->foreign('team_id')->references('id')->on('teams')->comment("The Topic ID references the ID column in the Topics table");
             $table->string('name', 100)->comment("The name of the Note");
             $table->text('text')->comment("Text of note")->nullable();
             $table->timestamp('created_at')->comment("The time the Note was created")->nullable();

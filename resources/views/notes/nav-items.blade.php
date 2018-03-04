@@ -4,3 +4,5 @@
         {{__('Add Note')}}
     </a>
 </li>
+
+@include('notes.create')

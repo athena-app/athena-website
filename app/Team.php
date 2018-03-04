@@ -8,6 +8,6 @@ use App\Note;
 class Team extends SparkTeam
 {
     public function notes() {
-        return $thins->hasMany(Note::class);
+        return $this->hasMany(Note::class);
     }
 }
