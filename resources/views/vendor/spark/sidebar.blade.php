@@ -1,3 +1,4 @@
+@if (collect(Request::segments())->last() != "home")
 <aside class="mb-2">
     <div class="spark-settings-tabs">
         <h3 class="nav-heading">
@@ -18,6 +19,7 @@
         @endif
     </ul>
 </aside>
+@endif
 <aside class="mb-2">
     <div class="spark-settings-tabs">
         <h3 class="nav-heading">
