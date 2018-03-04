@@ -6,17 +6,9 @@
  * @subpackage  Http\Controllers
  */
 
-namespace app;
+namespace App\Http\Controllers;
 
-use Alert;
-use Auth;
-use DB;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Input;
-use Redirect;
-use Validator;
-use app\Models\Topic;
+use App\Topic;
 
 class TopicController extends Controller
 {
@@ -31,20 +23,9 @@ class TopicController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('topics.overview')
-            ->with('topics', Topic::all());
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param \app\Models\Subject $subject The Subject to display
+     * @param \app\Models\Topic $topic The Topic to display
      * @return \Illuminate\Http\Response
      */
     public function show(Topic $topic)

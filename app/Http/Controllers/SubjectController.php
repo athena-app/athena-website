@@ -6,7 +6,7 @@
  * @subpackage  Http\Controllers
  */
 
-namespace app;
+namespace App\Http\Controllers;
 
 use Alert;
 use Auth;
@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use Validator;
-use app\Models\Subject;
+use App\Subject;
 
 class SubjectController extends Controller
 {
@@ -35,7 +35,7 @@ class SubjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function overview()
     {
         return view('subjects.overview')
             ->with('subjects', Subject::all());

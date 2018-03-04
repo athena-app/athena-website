@@ -16,8 +16,8 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id')->comment("The ID of the Lesson");
-            $table->integer('topic_id')->unsigned()->index()->nullable()->comment("The ID of the Topic's Location");
-            $table->foreign('topic_id')->references('id')->on('topics')->comment("The Topic ID references the ID column in the Topics table");
+            $table->integer('subtopic_id')->unsigned()->index()->nullable()->comment("The ID of the Topic's Location");
+            $table->foreign('subtopic_id')->references('id')->on('subtopics')->comment("The Topic ID references the ID column in the Topics table");
             $table->string('name', 100)->comment("The name of the Well");
             $table->string('video_url', 255)->comment("The Lessons video");
             $table->text('description')->comment("Description of video");

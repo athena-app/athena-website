@@ -22,8 +22,8 @@ class Topic extends Model
         return $this->belongsTo(Subject::class);
     }
 
-    public function lessons() {
-        return $this->hasMany(Lesson::class);
+    public function subtopics() {
+        return $this->hasMany(Subtopic::class);
     }
 
     //TODO

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Lesson Controller
+ * Subtopic Controller
  *
  * @subpackage  Http\Controllers
  */
@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Subtopic;
 
-class LessonController extends Controller
+class SubtopicController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,12 +25,12 @@ class LessonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \app\Models\Lesson $lesson The Lesson to display
+     * @param \app\Models\Subtopic $subtopic The Subtopic to display
      * @return \Illuminate\Http\Response
      */
-    public function show(Lesson $lesson)
+    public function show(Subtopic $subtopic)
     {
-        return view('lessons.show')
-            ->with('lesson', $lesson);
+        return view('subtopics.show')
+            ->with('subtopic', $subtopic);
     }
 }
