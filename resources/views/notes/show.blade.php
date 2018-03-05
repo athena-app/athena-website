@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="card-body">
-        {{ $note->text }}
+        <pre style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{ $note->text }}</pre>
     </div>
 </div>
 @endsection
